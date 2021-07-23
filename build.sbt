@@ -2,7 +2,7 @@ name := "jackson-scala-csv"
 
 version := "0.1"
 
-scalaVersion := "3.0.0"
+scalaVersion := "3.0.1"
 
 idePackagePrefix := Some("com.github.pjfanning.jackson.csv")
 
