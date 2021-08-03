@@ -3,7 +3,7 @@ package com.github.pjfanning.jackson.csv
 import com.fasterxml.jackson.core.`type`.TypeReference
 import com.fasterxml.jackson.databind.MappingIterator
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.fasterxml.jackson.dataformat.csv.CsvMapper
+import com.fasterxml.jackson.dataformat.csv.{CsvMapper, CsvParser}
 
 import scala.jdk.CollectionConverters._
 
@@ -12,6 +12,7 @@ case class OrderLine(item: String, quantity: Int, unitPrice: BigDecimal)
 object Main extends App {
   val csvMapper = CsvMapper.builder()
     .addModule(DefaultScalaModule)
+    .enable(CsvParser.Feature.TRIM_SPACES)
     .build()
   val orderLineSchema = csvMapper.schemaFor(classOf[OrderLine]).withHeader
   val orderLinesIterator: MappingIterator[OrderLine] = csvMapper.readerFor(classOf[OrderLine]).`with`(orderLineSchema)
