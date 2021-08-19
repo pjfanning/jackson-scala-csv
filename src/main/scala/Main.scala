@@ -15,7 +15,7 @@ object Main extends App {
     .enable(CsvParser.Feature.TRIM_SPACES)
     .build()
   val orderLineSchema = csvMapper.schemaFor(classOf[OrderLine]).withHeader
- println(s"schema: ${orderLineSchema.getColumnDesc}")
+  println(s"schema: ${orderLineSchema.getColumnDesc}")
   val orderLinesIterator: MappingIterator[OrderLine] = csvMapper.readerFor(classOf[OrderLine]).`with`(orderLineSchema)
     .readValues(FileUtil.readBytes("orderLines.csv"))
   val orderLines = orderLinesIterator.readAll().asScala.toSeq
