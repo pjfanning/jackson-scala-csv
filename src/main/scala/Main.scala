@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.MappingIterator
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.fasterxml.jackson.dataformat.csv.{CsvMapper, CsvParser, CsvSchema}
 
-import scala.jdk.CollectionConverters.*
+import scala.jdk.CollectionConverters._
 
 case class OrderLine(item: String, quantity: Int, unitPrice: Option[BigDecimal])
 
