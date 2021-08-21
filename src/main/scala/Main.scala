@@ -17,7 +17,7 @@ object Main extends App {
 
   val readerSchema = CsvSchema.builder().setUseHeader(true).setReorderColumns(true).build()
   val orderLinesIterator: MappingIterator[OrderLine] = csvMapper.readerFor(classOf[OrderLine]).`with`(readerSchema)
-    .readValues(FileUtil.readBytes("orderLines-wrong-header-order.csv"))
+    .readValues(FileUtil.readBytes("orderLines.csv"))
   val orderLines = orderLinesIterator.readAll().asScala.toSeq
   println(s"read $orderLines")
 
