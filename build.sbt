@@ -2,13 +2,13 @@ name := "jackson-scala-csv"
 
 version := "0.1"
 
-scalaVersion := "3.0.2"
+scalaVersion := "3.1.0"
 
 idePackagePrefix := Some("com.github.pjfanning.jackson.csv")
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-val jacksonVersion = "2.13.0-rc2"
+val jacksonVersion = "2.13.0"
 
 libraryDependencies ++= Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
