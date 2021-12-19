@@ -8,7 +8,7 @@ idePackagePrefix := Some("com.github.pjfanning.jackson.csv")
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-val jacksonVersion = "2.13.0"
+val jacksonVersion = "2.13.1"
 
 libraryDependencies ++= Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
