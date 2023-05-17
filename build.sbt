@@ -6,7 +6,7 @@ scalaVersion := "3.2.2"
 
 idePackagePrefix := Some("com.github.pjfanning.jackson.csv")
 
-resolvers += Resolver.sonatypeRepo("snapshots")
+//resolvers += Resolver.sonatypeRepo("snapshots")
 
 val jacksonVersion = "2.15.1"
 
